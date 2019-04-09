@@ -24,20 +24,18 @@ app.engine('.hbs', exphbs({
 }))
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
-app.use(express.static(__dirname + 'public'));
+
+app.use(express.static(path.join(__dirname, 'public/css')));
 
 /* Updating the HTML with the name variable */
 app.get('/', (request, response) => {
   connected += 1;
-  if (connected > 5){
-    response.render('home', {
-      queueLoc: connected,
-      apology: 'We apologize for the long wait!'
-    })
-  }
-  else {
-    response.render('home', {
-      queueLoc: connected,
-    })
-  }
+
+  var apologyString = ""
+  if (connected >= 5) { apologyString = 'We apologize for the long wait!'}
+
+  response.render('home', {
+    queueLoc: connected,
+    apology: apologyString
+  })
 })
