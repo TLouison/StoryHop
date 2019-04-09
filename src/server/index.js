@@ -20,15 +20,24 @@ app.listen(port, (err) => {
 app.engine('.hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  layoutsDir: path.join(__dirname, 'views/layouts')
+  layoutsDir: path.join(__dirname, 'views/layouts'),
 }))
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
+app.use(express.static(__dirname + 'public'));
 
 /* Updating the HTML with the name variable */
 app.get('/', (request, response) => {
   connected += 1;
-  response.render('home', {
-    queueLoc: connected 
-  })
+  if (connected > 5){
+    response.render('home', {
+      queueLoc: connected,
+      apology: 'We apologize for the long wait!'
+    })
+  }
+  else {
+    response.render('home', {
+      queueLoc: connected,
+    })
+  }
 })
