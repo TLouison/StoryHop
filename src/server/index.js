@@ -4,6 +4,8 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
 const port = 3000
+const server = app.listen(port+1)
+const io = require("socket.io")(server)
 
 var connected = 0;
 
@@ -39,3 +41,9 @@ app.get('/', (request, response) => {
     apology: apologyString
   })
 })
+
+io.on('connection', (socket) => {
+  console.log('New user connected')
+})
+
+/* https://github.com/ngrt/simpleChatApp/blob/master/app.js */
