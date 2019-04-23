@@ -20,6 +20,9 @@ Our goal with StoryHop is to improve the vocabulary, sentence structure, and int
 communicating with other English speakers. Along with this, we want to have the users develop a love of storytelling by
 allowing their imaginations to guide the experience.
 
+### Communication
+The official StoryHop discord is available at: https://discord.gg/jwhGn8S. Come join us!
+
 ### The Team
 The StoryHop core team consists of our five founding members. They are:
 - Herta Calvo-Faugier
