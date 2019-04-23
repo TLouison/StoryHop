@@ -1,0 +1,41 @@
+{
+  "name": "openparty",
+  "version": "0.3.0",
+  "description": "An open-source system for role based party-games.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -b -t 5000 --exit",
+    "coverage": "mocha -R html-cov --exit > coverage.html 2> /dev/null",
+    "start": "node app"
+  },
+  "author": "Lesterpig",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "colors": "1",
+    "ejs": "2",
+    "git-repo-info": "1",
+    "i18n": "0",
+    "node-uuid": "1",
+    "openpgp": "2",
+    "sanitize-html": "1",
+    "semver": "5",
+    "sockpress": "^1.4.0"
+  },
+  "devDependencies": {
+    "blanket": "1",
+    "mocha": "4",
+    "mocha-lcov-reporter": "1",
+    "request": "^2.88.0",
+    "socket.io-client": "2",
+    "supertest": "3"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "openparty/lib"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lesterpig/openparty.git"
+  }
+}
