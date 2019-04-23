@@ -9,8 +9,9 @@ HTML Style Guideline
 --------------------
 This project hold the [HTML/CSS Style Guide][htmlcss] from Google Style Guides
 
-Markdown Guideline
+Documentation Guideline
 ------------------
+All documentation done with [Markdown](https://daringfireball.net/projects/markdown)   
 Titles are done in H1  
 Subtitles/sections are done in H2  
 
