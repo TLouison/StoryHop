@@ -19,5 +19,10 @@ The StoryHop core team consists of our five founding members. They are:
 This project is being developed under the supervision and guidance of the [Rensselaer Center for Open Source (RCOS)](https://rcos.io/).
 The observatory page can be found [here](https://rcos.io/projects/tlouison/storyhop/profile).
 
+## Reference Material
+Our basis for our network infrastructure was based upon [lesterpig/openparty](https://github.com/Lesterpig/openparty). We have heavily modified
+the code to the point where it no longer makes sense to be working as a fork of the project, but we recognize the contribution made by the
+openparty project and thank lesterpig for his open source project.
+
 ## License
-StoryHop is being developed with an open source MIT license.
+StoryHop is being developed with an open source GPLv3 license.
