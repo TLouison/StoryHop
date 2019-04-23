@@ -97,7 +97,7 @@ module.exports = {
 
 if(isMain) {
   module.exports.start(function() {
-    console.log(('-- OpenParty ' + version + ' is ready on port ' + __conf.port).green);
+    console.log(('-- StoryHop ' + version + ' is ready on port ' + __conf.port).green);
   });
 
 
@@ -110,7 +110,7 @@ if(isMain) {
     }
     exitHandled = true;
 
-    console.error(('-- Stopping OpenParty gracefully, please wait ' + __conf.shutdownDelay + ' seconds...').grey);
+    console.error(('-- Stopping StoryHop gracefully, please wait ' + __conf.shutdownDelay + ' seconds...').grey);
     for(var i = __conf.shutdownDelay; i > 0; i--) {
       setTimeout((function(i) {
         return function() {
