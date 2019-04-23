@@ -1,14 +1,12 @@
 {
-  "name": "openparty",
-  "version": "0.3.0",
-  "description": "An open-source system for role based party-games.",
+  "name": "StoryHop",
+  "version": "0.0.1",
+  "description": "An open-source one-word-at-a-time party game that can double as an educational tool. It is based on the openparty platform developed by Lesterpig.",
   "main": "app.js",
   "scripts": {
-    "test": "mocha -b -t 5000 --exit",
-    "coverage": "mocha -R html-cov --exit > coverage.html 2> /dev/null",
     "start": "node app"
   },
-  "author": "Lesterpig",
+  "author": "TLouison",
   "license": "GPL-3.0",
   "dependencies": {
     "colors": "1",
@@ -19,7 +17,8 @@
     "openpgp": "2",
     "sanitize-html": "1",
     "semver": "5",
-    "sockpress": "^1.4.0"
+    "sockpress": "1.3.1",
+    "swearjar": "^0.2.0"
   },
   "devDependencies": {
     "blanket": "1",
@@ -29,13 +28,8 @@
     "socket.io-client": "2",
     "supertest": "3"
   },
-  "config": {
-    "blanket": {
-      "pattern": "openparty/lib"
-    }
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lesterpig/openparty.git"
+    "url": "https://github.com/TLouison/StoryHop.git"
   }
 }

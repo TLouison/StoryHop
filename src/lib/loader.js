@@ -120,7 +120,7 @@ var checkWrongAttributes = function(instance, errorLog) {
 
 
   if(instance.opVersion && !sem.satisfies(__version, instance.opVersion)) {
-    errorLog.push('This module is not ready for this version of OpenParty (' + __version + ' does not satisfy ' + instance.opVersion + ')');
+    errorLog.push('This module is not ready for this version of StoryHop (' + __version + ' does not satisfy ' + instance.opVersion + ')');
   }
 };
 
