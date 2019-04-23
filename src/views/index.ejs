@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="openparty">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= __conf.name || __("StoryHop") %></title>
+
+    <link rel="stylesheet" href="css/bootstrap.default.min.css" id="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.darkly.min.css" id="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.kids.min.css" id="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+  </head>
+  <body ng-controller="controller" class="ng-cloak">
+
+    <div class="container-fluid ng-cloak" style="margin-top:20px" ng-show="status == 0">
+      <div class="jumbotron">
+        <h2>
+          <img src="images/rabbit-emoji.png" class="float-left" height="40">
+          <%= __("Welcome to %s!", __conf.name || __("StoryHop")) %>
+          <img src="images/rabbit-emoji.png" class="float-left" height="40">
+        </h2>
+        <p><%- __conf.welcomeMsg || __("Please enter a username to access the game.") %></p>
+        <div class="alert alert-danger" role="alert" ng-show="loginErrorMessage">
+          <strong>{{ loginErrorMessage }}</strong>
+        </div>
+        <form role="form" ng-submit="loginSubmit()">
+          <div class="form-group">
+            <label for="usernameInput"><%= __("Username") %></label>
+            <input type="text" class="form-control" id="usernameInput" placeholder="" ng-model="username">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg"><%= __("Enter!") %></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container-fluid ng-cloak" style="margin-top:20px" ng-show="status == -1">
+      <div class="alert alert-danger" role="alert">
+        <h4><strong><%= __("Something went wrong...") %></strong></h4>
+        <p><%= __("Connection with server has been interrupted.") %></p>
+        <p><%= __("Please check that you are correctly connected to internet and that the server is running.") %></p>
+      </div>
+    </div>
+
+    <div class="container-fluid ng-cloak" ng-show="status == 1">
+      <h1>
+        <img src="images/rabbit-emoji.png" class="float-left" height="40">
+        <%= __("StoryHop") %>
+        <small>
+          <%= __("Playing as:") %> {{ username }}
+          <div style="float: right">
+            <button class="btn btn-default btn-xs" ng-click="changeTheme()" >
+              <span class="glyphicon glyphicon-adjust"></span>
+            </button>
+
+            <button type="button" class="btn btn-xs btn-danger" ng-click="logout()" >
+              <span class="glyphicon glyphicon-log-out"></span>
+              Log out
+            </button>
+          </div>
+        </small>
+      </h1>
+      <% if(__conf.motd) { %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%- __conf.motd %>
+        </div>
+      </div>
+      <% } %>
+
+      <div class="row" style="float: right">
+          <span ng-show="isReady">
+            You're ready!
+          </span>
+          <button class="btn btn-xs btn-success" ng-click="userReady()">
+            <h5>Ready</h5>
+          </button>
+          <span class="glyphicon glyphicon-user"></span>
+          <ng-pluralize count="users.lobby" when="{'0': '<%= __("0 Players") %>', 'one': '<%= __("1") %> <%= __n("player", "players", 1) %>', 'other': '{} <%= __n("player", "players", 2) %>'}"></ng-pluralize>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8" class="col-sm-8">
+          <h3> Story: </h3>
+          <pre ng-bind-html="gameChat | parseUrlFilter:'_blank'" scroll-glue class="resizable preChat"></pre>
+          <input type="text" class="form-control" placeholder="<%= __("Type a message here...") %>" ng-model="chatMessageWord" ng-keydown="keyChatWord($event, true)"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8" class="col-sm-8">
+          <h3> Chat: </h3>
+          <pre ng-bind-html="preChat | parseUrlFilter:'_blank'" scroll-glue class="resizable preChat"></pre>
+          <input type="text" class="form-control" placeholder="<%= __("Type a message here...") %>" ng-model="chatMessage" ng-keydown="keyChat($event, true)"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8" class="col-sm-8">
+          <h5> StoryHop, 2019. <a href="https://github.com/hertacalvo/openparty">View us on GitHub!</a></h5>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/socket.min.js"></script>
+    <script src="js/glue.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/openpgp.min.js"></script>
+
+    <script src="js/controller.js"></script>
+    <script src="js/crypto.js"></script>
+  </body>
+</html>
