@@ -8,7 +8,6 @@ Clone the github repository:
 `git clone https://github.com/TLouison/StoryHop.git`  
 Go to the `src` directory: `cd StoryHop/src`  
 Install npm dependencies: `npm install`  
-Install additional npm packages: `npm install sockpress@1.3.1` and `npm install swearjar`  
 
 ### Running the server
 Once the installation is complete, run the server by going to the `src` directory and running `npm start`.   
