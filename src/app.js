@@ -49,10 +49,11 @@ module.exports = {
         return console.log('No gametype available. Please put some gametypes packages in data/ folder.'.red);
       }
 
-      global.__gametypes       = gametypes;
+      global.__gametypes       = {};
       global.__staticGametypes = {};
       global.__customCss       = [];
-      for(var type in gametypes) {
+/*
+ 	 for(var type in gametypes) {
         __staticGametypes[type] = new gametypes[type]();
 
         // Has CSS extensions ?
@@ -68,7 +69,7 @@ module.exports = {
           console.log(('-- Successfully loaded gameplay file "' + type + '"').grey);
         }
       }
-
+*/
       this.server = app.listen(__conf.port, __conf.bind, callback);
       userCountInterval = setInterval(function() {
         var nbConnected = 0;
@@ -131,3 +132,4 @@ if(isMain) {
   }
 
 }
+

@@ -12,42 +12,42 @@ module.exports = function(basePath, callback) {
   if(!callback)
     callback = function(){};
 
-  var gametypes = {};
+  var gametypes = {"storyhop": "storyhop"};
 
   fs.readdir(basePath, function(err, files) {
 
-    if(err) {
-       return callback( '!! Unable to load game definitions\n'.red +
-              '   Install gameplay definitions in data/ subdirectory\n'.red +
-              ('   Was: ' + err).red, null);
-    }
+    // if(err) {
+    //    return callback( '!! Unable to load game definitions\n'.red +
+    //           '   Install gameplay definitions in data/ subdirectory\n'.red +
+    //           ('   Was: ' + err).red, null);
+    // }
 
-    var ok = false;
+    // var ok = false;
 
-    files.forEach(function(filePath) {
-      if(fs.statSync(path.join(basePath, filePath)).isDirectory()) {
+    // files.forEach(function(filePath) {
+    //   if(fs.statSync(path.join(basePath, filePath)).isDirectory()) {
+    // 
+    //     var modulePath = path.join(basePath, filePath, 'definition.js');
+    //     if(!fs.existsSync(modulePath))
+    //       return;
+    // 
+    //     var plugin;
+    //     if((plugin = checkFile(modulePath))) {
+    //       ok = true;
+    //       gametypes[filePath] = plugin;
+    // 
+    //       // Has public files ?
+    //       var publicPath = path.join(basePath, filePath, 'public');
+    //       if(fs.existsSync(publicPath)) {
+    //         __app.use('/' + filePath, __app.express.static(publicPath));
+    //       }
+    //     }
+    //   }
+    // });
 
-        var modulePath = path.join(basePath, filePath, 'definition.js');
-        if(!fs.existsSync(modulePath))
-          return;
-
-        var plugin;
-        if((plugin = checkFile(modulePath))) {
-          ok = true;
-          gametypes[filePath] = plugin;
-
-          // Has public files ?
-          var publicPath = path.join(basePath, filePath, 'public');
-          if(fs.existsSync(publicPath)) {
-            __app.use('/' + filePath, __app.express.static(publicPath));
-          }
-        }
-      }
-    });
-
-    if(!ok) {
-      return callback('!! No gameplay definition was correct. Aborting.'.red, null);
-    }
+    // if(!ok) {
+    //   return callback('!! No gameplay definition was correct. Aborting.'.red, null);
+    // }
 
     callback(null, gametypes);
 
@@ -123,3 +123,4 @@ var checkWrongAttributes = function(instance, errorLog) {
     errorLog.push('This module is not ready for this version of OpenParty (' + __version + ' does not satisfy ' + instance.opVersion + ')');
   }
 };
+
