@@ -1,12 +1,23 @@
 # StoryHop
-A one-word-at-a-time party game that can double as an educational tool
+StoryHop is a one-word-at-a-time party game that can double as an educational tool for people of all ages to improve
+their understanding of the English language.
 
-## How to run
-### Dowload Dependencies
-First, you must install the dependencies to allow this server to run. Run the following command from the main StoryHop folder:
-```cd src && npm install node express express-handlebars```
+## Goals
+Our goal with StoryHop is to improve the vocabulary, sentence structure, and intuitive sense of English syntax through
+communicating with other English speakers. Along with this, we want to have the users develop a love of storytelling by
+allowing their imaginations to guide the experience.
 
-### Run Server
-Once cloned, navigate to the `StoryHop` folder. From there, run the command
-```node src/server/index.js```
-Once run, the server will be attached to that terminal on port 3000, so simply connect to the sever in any web browser by typing `localhost:3000` into the address bar.
+## The Team
+The StoryHop core team consists of our five founding members. They are:
+- Herta Calvo-Faugier
+- Anthony Chen
+- Robert Geddis-Hannon
+- Todd Louison
+- Nathaniel Wheeler
+
+## RCOS
+This project is being developed under the supervision and guidance of the [Rensselaer Center for Open Source (RCOS)](https://rcos.io/).
+The observatory page can be found [here](https://rcos.io/projects/tlouison/storyhop/profile).
+
+## License
+StoryHop is being developed with an open source MIT license.
