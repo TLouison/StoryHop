@@ -24,5 +24,16 @@ Our basis for our network infrastructure was based upon [lesterpig/openparty](ht
 the code to the point where it no longer makes sense to be working as a fork of the project, but we recognize the contribution made by the
 openparty project and thank lesterpig for his open source project.
 
+## Installation
+Clone the github repository:
+`git clone https://github.com/TLouison/StoryHop.git`  
+Go to the `src` directory: `cd StoryHop/src`  
+Install npm dependencies: `npm install`  
+Install additional npm packages: `npm install sockpress@1.3.1` and `npm install swearjar`  
+
+## Running the server
+Once the installation is complete, run the server by going to the `src` directory and running `npm start`.   
+The application should be accessible on `localhost`, port `3040`.
+
 ## License
 StoryHop is being developed with an open source GPLv3 license.
