@@ -53,7 +53,10 @@ module.exports = function(basePath, callback) {
 
   });
 };
-
+//
+//checking the file for errors 
+//the path is returned if succesfull, null if it is not
+//
 var checkFile = function(path) {
 
   var errorLog = [];
@@ -81,7 +84,9 @@ var checkFile = function(path) {
     return null;
   }
 };
-
+//
+//Making sure all of the attributes are present
+//
 var checkMissingAttributes = function(instance, errorLog) {
 
   for(var attr in attrs) {
@@ -95,7 +100,9 @@ var checkMissingAttributes = function(instance, errorLog) {
   }
 
 };
-
+//
+//fucntion to see what type fn is and rerurning that
+//
 var checkType = function(e, t) {
 
   var fn;
@@ -109,6 +116,11 @@ var checkType = function(e, t) {
   return fn(e);
 
 };
+
+//
+//if there is an invlaid type in attrs an error is pushed to the 
+//error logue
+//
 
 var checkWrongAttributes = function(instance, errorLog) {
 

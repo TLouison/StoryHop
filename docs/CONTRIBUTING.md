@@ -1,6 +1,10 @@
 # How to contribute
 
-Story Hop is an open source party app and education tool developed by students who always are welcoming to any help. We want to keep it as easy as possible to contribute changes that get things working in your environment. There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.
+Story Hop is an open source party app and education tool developed by students
+who always are welcoming to any help. We want to keep it as easy as possible to
+contribute changes that get things working in your environment. There are a few
+guidelines that we need contributors to follow so that we can have a chance of
+keeping on top of things.
 
 ## Getting started
 
