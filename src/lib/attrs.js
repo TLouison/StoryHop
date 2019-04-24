@@ -1,3 +1,6 @@
+//
+//setting up the types for all of the attributes
+//
 module.exports = {
 
   name           : {m: true, t: 'String'},

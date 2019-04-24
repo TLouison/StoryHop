@@ -60,6 +60,7 @@ openpgp.generateKey(options)
   return openpgp.sign({data: challenge, privateKeys: k.key});
 
 })
+
 .then(function(message) {
 
   var key = openpgp.key.readArmored(p).keys;
@@ -68,12 +69,14 @@ openpgp.generateKey(options)
   return openpgp.verify({publicKeys: key, message: message});
 
 })
+
 .then(function(result) {
 
   var key = openpgp.key.readArmored(p).keys;
   console.log('Fingerprint:', key[0].primaryKey.fingerprint);
 
 })
+
 .catch(function(e) {
   console.log(e);
 });
