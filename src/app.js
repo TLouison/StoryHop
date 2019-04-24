@@ -72,7 +72,7 @@ module.exports = {
 */
       this.server = app.listen(__conf.port, __conf.bind, callback);
       userCountInterval = setInterval(function() {
-        var nbConnected = 0;
+        var nbConnected = 0; // the number of players connected
         var nbPlaying = 0;
         for(var socket in app.io.sockets.sockets) {
           nbConnected++;
