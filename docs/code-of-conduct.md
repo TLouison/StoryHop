@@ -5,7 +5,7 @@ environment for anyone who wishes to join the StoryHop community, this code
 of conduct will be enforced throughout the project.
 
 ## Overview
-In any way shape or form, harassment is unacceptable within the StoryHop community.
+In any way, shape, or form, harassment is unacceptable within the StoryHop community.
 One of the guiding principles of open source is non-discrimination, and as such,
 we stand strongly against any language or actions (either in person or out), that
 cause any member of our community to feel targeted or uncomfortable. Any violators 

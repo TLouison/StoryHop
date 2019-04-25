@@ -13,13 +13,13 @@ keeping on top of things.
 
 ## Making Changes
 * Create a branch where you want to do your work
- * This should usually be the master branch
- * Only target release branches if you are certain your fix must be on that branch.
+	* This should usually be branched from the master branch
+* Only target release branches if you are certain your fix must be on that branch.
 * Check for unnecessary whitespace with git diff --check before committing.
-* Make sure you comment you code and add commit messages
+* Make sure you comment your code well and add detailed commit messages
 * Make sure you add and update tests for your changes
 
 ## Submitting Changes
 * Push your changes to a topic branch
- * Make sure to add commit comments
-* Submit a pull request and out core team will look at the pull reuests durring team meetings and approve them if it meets our requirements.
+* Make sure to add good commit comments
+* Submit a pull request for our core team to look at it during a future team meeting, and approve it if it meets our requirements.
