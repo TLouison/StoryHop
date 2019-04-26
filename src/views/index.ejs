@@ -68,6 +68,19 @@
           </div>
         </small>
       </h1>
+      <small>
+        <div style="float: right">
+          <span ng-show="isReady">
+            You're ready!
+          </span>
+          <button class="btn btn-success btn-xs" ng-click="userReady()">
+            <h5>Ready</h5>
+          </button>
+          <span class="glyphicon glyphicon-user"></span>
+          <ng-pluralize count="users.lobby" when="{'0': '<%= __("0 Players") %>', 'one': '<%= __("1") %> <%= __n("player", "players", 1) %>', 'other': '{} <%= __n("player", "players", 2) %>'}"></ng-pluralize>
+        </div>
+      </small>
+
       <% if(__conf.motd) { %>
       <div class="panel panel-default">
         <div class="panel-body">
@@ -75,17 +88,6 @@
         </div>
       </div>
       <% } %>
-
-      <div class="row" style="float: right">
-          <span ng-show="isReady">
-            You're ready!
-          </span>
-          <button class="btn btn-xs btn-success" ng-click="userReady()">
-            <h5>Ready</h5>
-          </button>
-          <span class="glyphicon glyphicon-user"></span>
-          <ng-pluralize count="users.lobby" when="{'0': '<%= __("0 Players") %>', 'one': '<%= __("1") %> <%= __n("player", "players", 1) %>', 'other': '{} <%= __n("player", "players", 2) %>'}"></ng-pluralize>
-      </div>
 
       <div class="row">
         <div class="col-md-8" class="col-sm-8">
