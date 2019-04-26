@@ -3,6 +3,7 @@ var utils  = require('./utils');
 var crypto = require('./crypto');
 var git    = require('git-repo-info');
 var swearjar = require('swearjar');
+swearjar.loadBadWords('./custom_profanity.json');
 // Enabling 'kid mode' aka no profanity
 var kidmode = __km;
 /*  List of usernames to assign if given
